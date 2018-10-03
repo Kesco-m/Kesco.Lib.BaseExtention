@@ -24,5 +24,10 @@ namespace Kesco.Lib.BaseExtention
         /// Логин
         /// </summary>
         public const string Login = @"^[a-z0-9_]+([-+.'][a-z0-9_]+)*$";
+
+        /// <summary>
+        /// Имя файла
+        /// </summary>
+        public const string FileName = @"\w+[.]\w+$";
     }
 }

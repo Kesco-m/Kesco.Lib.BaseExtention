@@ -11,6 +11,11 @@
         public const string Add = "v4_buttonIcons.Add";
 
         /// <summary>
+        /// Иконка для кнопки Добавить
+        /// </summary>
+        public const string Edit = "v4_buttonIcons.Edit";
+
+        /// <summary>
         /// Иконка для кнопки ОК
         /// </summary>
         public const string Ok = "v4_buttonIcons.Ok";

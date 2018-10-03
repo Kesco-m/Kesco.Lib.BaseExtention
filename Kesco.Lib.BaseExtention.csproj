@@ -53,6 +53,7 @@
     <Compile Include="Enums\Dictionaries.cs" />
     <Compile Include="Enums\Docs.cs" />
     <Compile Include="Enums\EnumAccessors.cs" />
+    <Compile Include="Enums\EnumExtentions.cs" />
     <Compile Include="ObjectDeepCloner.cs" />
     <Compile Include="RegexPattern.cs" />
     <Compile Include="Validation.cs" />
