@@ -45,6 +45,7 @@
     <Compile Include="BindModels\PropertyBinder.cs" />
     <Compile Include="CollectionExtension.cs" />
     <Compile Include="DateTimeExtensionMethods.cs" />
+    <Compile Include="DecimalExtentionMethods.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="DialerInterop.cs" />
     <Compile Include="DocViewInterop.cs" />
