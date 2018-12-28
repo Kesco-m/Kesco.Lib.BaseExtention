@@ -1,10 +1,13 @@
-﻿namespace Kesco.Lib.BaseExtention.BindModels
+﻿using System;
+
+namespace Kesco.Lib.BaseExtention.BindModels
 {
     /// <summary>
     ///  Класс хронящий в себе одно string значение, с возможностью уведомлений об изменении
     /// </summary>
     /// <remarks>Основное предназначение - двухстронний binding при помощи классов V4Binding</remarks>
     /// <example>Пример использования есть в DocPage для Number и Description</example>
+    [Serializable]
     public class BinderValue : IBinderValue<string>
     {
         private string _value;

@@ -1222,6 +1222,9 @@
         WithChildrenSynonyms = 3
     }
 
+    /// <summary>
+    /// Перечень типов валидности
+    /// </summary>
     public enum ValidAtStatuses
     {
         Valid,

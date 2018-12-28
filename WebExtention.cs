@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Specialized;
+using System.Text;
+using System.Web;
 
 namespace Kesco.Lib.BaseExtention
 {
@@ -20,6 +23,32 @@ namespace Kesco.Lib.BaseExtention
                 string.Format(
                     "$('body').append('<a id=\"{0}\"></a>'); $(\"#{0}\").attr(\"href\", {1}); v4_evalHref('{0}'); $('#{0}').remove();",
                     id, hrefIsVar ? href : "\"" + href + "\"");
+        }
+
+        /// <summary>
+        /// Построитель строки uri
+        /// </summary>
+        /// <param name="uri">Путь к форме</param>
+        /// <param name="qparams">Коллекция параметров</param>
+        /// <returns>URI с параметрами</returns>
+        public static string UriBuilder(string uri, NameValueCollection qparams)
+        {
+            var sb = new StringBuilder();
+            
+            foreach (string key in qparams)
+                sb.AppendFormat("{0}={1}{2}", key, HttpUtility.UrlDecode(qparams[key]), "&");
+            
+
+
+            if (qparams.Count > 0)
+            {
+                if (uri.Contains("?")) uri += "&";
+                else uri += "?";
+            }
+            
+            uri += sb.ToString().TrimEnd('&');
+
+            return uri;
         }
     }
 }

@@ -540,5 +540,15 @@ namespace Kesco.Lib.BaseExtention
                 ? value.Substring(value.Length - length, length)
                 : value;
         }
+
+        /// <summary>
+        /// Nullable object to string
+        /// </summary>
+        /// <param name="obj">object</param>
+        /// <returns>string</returns>
+        public static string SafeToString(this object obj)
+        {
+            return (obj ?? "").ToString();
+        }
     }
 }

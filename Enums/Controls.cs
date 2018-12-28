@@ -48,6 +48,12 @@
         /// Иконка для кнопки Справка
         /// </summary>
         public const string Help = "v4_buttonIcons.Help";
+
+        /// <summary>
+        /// Иконка для кнопки Alert
+        /// </summary>
+        public const string Alert = "v4_buttonIcons.Alert";
+        
     }
 
     /// <summary>
@@ -83,6 +89,9 @@
     /// </summary>
     public enum NtfStatus
     {
+        /// <summary>
+        /// Пустое
+        /// </summary>
         Empty = 0,
         /// <summary>
         /// Информационное
@@ -169,12 +178,27 @@
         /// </summary>
         Null = 5
     }
-    
+
+    /// <summary>
+    /// Перечисление типов действий для меню
+    /// </summary>
     public enum MenuButtonActionType
     {
+        /// <summary>
+        /// ссылка
+        /// </summary>
         UrlAction = 0,
+        /// <summary>
+        /// действие
+        /// </summary>
         CmdAction = 1,
+        /// <summary>
+        /// javaScript
+        /// </summary>
         JSAction = 2,
+        /// <summary>
+        /// нет действий
+        /// </summary>
         None = 3
     }
 
