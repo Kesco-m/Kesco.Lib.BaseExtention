@@ -8,8 +8,8 @@ namespace Kesco.Lib.BaseExtention
     /// <summary>
     ///  Класс глубокого копирования объекта
     /// </summary>
-    /// <see cref="http://www.c-sharpcorner.com/uploadfile/ff2f08/deep-copy-of-object-in-c-sharp/"/>
-    /// <seealso cref="http://stackoverflow.com/questions/78536/deep-cloning-objects"/>
+    //// <see cref="http://www.c-sharpcorner.com/uploadfile/ff2f08/deep-copy-of-object-in-c-sharp/"/>
+    //// <seealso cref="http://stackoverflow.com/questions/78536/deep-cloning-objects"/>
     public static class ObjectDeepCloner
     {
         /// <summary>

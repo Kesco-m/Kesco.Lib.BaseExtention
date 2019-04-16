@@ -53,9 +53,43 @@
         /// Иконка для кнопки Alert
         /// </summary>
         public const string Alert = "v4_buttonIcons.Alert";
-        
+
+        /// <summary>
+        /// Иконка для кнопки Alert
+        /// </summary>
+        public const string FolderOpen = "v4_buttonIcons.FolderOpen";
+
+        /// <summary>
+        /// Иконка для кнопки Alert
+        /// </summary>
+        public const string Print = "v4_buttonIcons.Print";
+
+        /// <summary>
+        /// Иконка для кнопки Search
+        /// </summary>
+        public const string Search = "v4_buttonIcons.Search";
+
+        /// <summary>
+        /// Иконка для кнопки Swap
+        /// </summary>
+        public const string Swap = "v4_buttonIcons.Swap";
+
     }
 
+    /// <summary>
+    /// Как искать переданные значения
+    /// </summary>
+    public enum SearchIds
+    {
+        /// <summary>
+        /// включая
+        /// </summary>
+        In = 0,
+        /// <summary>
+        /// не включая
+        /// </summary>
+        NotIn = 1   
+    }
     /// <summary>
     /// Статус пользовательского сообщения
     /// </summary>

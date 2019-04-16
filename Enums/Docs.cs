@@ -1227,10 +1227,25 @@
     /// </summary>
     public enum ValidAtStatuses
     {
+        /// <summary>
+        /// действительный
+        /// </summary>
         Valid,
+        /// <summary>
+        /// недействительный
+        /// </summary>
         NotValid,
+        /// <summary>
+        /// еще не действительный
+        /// </summary>
         NotValidYet,
+        /// <summary>
+        /// уже не действительный
+        /// </summary>
         NotValidAlready,
+        /// <summary>
+        /// неразрешимый
+        /// </summary>
         Undecidable
     }
 
@@ -1239,9 +1254,21 @@
     /// </summary>
     public enum MtrChildType
     {
+        /// <summary>
+        /// Общие
+        /// </summary>
         Общие = 0,
+        /// <summary>
+        /// Документ Основание Платежа
+        /// </summary>
         ДокументОснованиеПлатежа = 1,
+        /// <summary>
+        /// Документ Оплаты
+        /// </summary>
         ДокументОплаты = 2,
+        /// <summary>
+        /// Документ ТТН
+        /// </summary>
         ДокументТТН = 3
     }
 
@@ -1273,8 +1300,17 @@
     /// </summary>
     public enum ContactTypeEnum
     {
+        /// <summary>
+        /// Телефон Мобильный
+        /// </summary>
         ТелефонМобильный = 22,
+        /// <summary>
+        /// Email
+        /// </summary>
         Email = 40,
+        /// <summary>
+        /// Web Сайт
+        /// </summary>
         WebСайт = 50
     }
 
@@ -1283,8 +1319,17 @@
     /// </summary>
     public enum AppParamType
     {
+        /// <summary>
+        /// не сохраняемый
+        /// </summary>
         NotSaved = 0,
+        /// <summary>
+        /// 
+        /// </summary>
         SavedWithClid = 1,
+        /// <summary>
+        /// всегда сохрняется
+        /// </summary>
         AlwaysSaved = 2
     }
 

@@ -32,7 +32,6 @@ namespace Kesco.Lib.BaseExtention
                             return result;
                         }
                     }
-                    break;
                 }
             }
 

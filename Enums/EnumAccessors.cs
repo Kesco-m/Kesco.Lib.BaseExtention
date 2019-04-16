@@ -11,21 +11,22 @@ namespace Kesco.Lib.BaseExtention.Enums
         /// Возвращает название Css-класса в зависимости типа нотификации
         /// </summary>
         /// <param name="ntf">Тип нотификации</param>
+        /// <param name="isNtf">Размер NTF</param>
         /// <returns></returns>
-        public static string GetCssClassByNtfStatus(NtfStatus ntf)
+        public static string GetCssClassByNtfStatus(NtfStatus ntf, bool isNtf = true)
         {
             string className;
 
             switch (ntf)
             {
                 case NtfStatus.Error:
-                    className = "v4NtfError";
+                    className = !isNtf ? "v4Error" : "v4NtfError";
                     break;
                 case NtfStatus.Information:
-                    className = "v4NtfInformation";
+                    className = !isNtf ? "v4Information" : "v4NtfInformation";
                     break;
                 case NtfStatus.Recommended:
-                    className = "v4NtfRecommended";
+                    className = !isNtf ? "v4Recommended" : "v4NtfRecommended";
                     break;
                 default:
                     className = "";

@@ -7,19 +7,30 @@ namespace Kesco.Lib.BaseExtention.Enums.Corporate
     /// </summary>
     public class ТипыРабочихМестSpecifications : Attribute
     {
-        internal ТипыРабочихМестSpecifications(string icon, string name)
+        internal ТипыРабочихМестSpecifications(string icon, string iconGrayed, string name, string nameGrayed)
         {
             Icon = icon;
+            IconGrayed = iconGrayed;
             Name = name;
+            NameGrayed = nameGrayed;
         }
         /// <summary>
         /// Иконка
         /// </summary>
         public string Icon { get; private set; }
         /// <summary>
+        /// Иконка не готового рабочего места
+        /// </summary>
+        public string IconGrayed { get; private set; }
+        /// <summary>
         /// Название типа рабочего места
         /// </summary>
         public string Name { get; private set; }
+
+        /// <summary>
+        /// Название типа рабочего места
+        /// </summary>
+        public string NameGrayed { get; private set; }
       
     }
 
@@ -31,31 +42,31 @@ namespace Kesco.Lib.BaseExtention.Enums.Corporate
         /// <summary>
         ///     Компьютеризированное рабочее место
         /// </summary>
-        [ТипыРабочихМестSpecifications("Portofolio.gif", "Компьютеризированное рабочее место")]
+        [ТипыРабочихМестSpecifications("Notebook.gif", "NotebookGrayed.gif", "Компьютеризированное рабочее место", "Компьютеризированное рабочее место - не организовано")]
         КомпьютеризированноеРабочееМесто = 1,
 
         /// <summary>
         ///     Номер гостиницы
         /// </summary>
-        [ТипыРабочихМестSpecifications("bed.gif", "Номер гостиницы")]
+        [ТипыРабочихМестSpecifications("bed.gif", "bed.gif", "Номер гостиницы", "Номер гостиницы")]
         НомерГостиницы = 2,
 
         /// <summary>
         ///     Оборудование
         /// </summary>
-        [ТипыРабочихМестSpecifications("service.gif", "Оборудование")]
+        [ТипыРабочихМестSpecifications("service.gif", "service.gif", "В расположении может находиться оборудование", "В расположении может находиться оборудование")]
         Оборудование = 3,
 
         /// <summary>
         ///     Cклад оборудования
         /// </summary>
-        [ТипыРабочихМестSpecifications("Store.gif", "Cклад оборудования")]
+        [ТипыРабочихМестSpecifications("Store.gif", "Store.gif", "Cклад оборудования", "Cклад оборудования")]
         CкладОборудования = 4,
 
         /// <summary>
         ///     Гостевое рабочее место
         /// </summary>
-        [ТипыРабочихМестSpecifications("Notebook.gif", "Гостевое рабочее место")]
+        [ТипыРабочихМестSpecifications("chat.png", "chat.png", "Гостевое рабочее место, посменная работа", "Гостевое рабочее место, посменная работа")]
         ГостевоеРабочееМесто = 5
     }
     
@@ -140,8 +151,17 @@ namespace Kesco.Lib.BaseExtention.Enums.Corporate
     /// </summary>
     public enum CombineType
     {
+        /// <summary>
+        /// Неважно
+        /// </summary>
         Неважно = -1,
+        /// <summary>
+        /// Основное Место Работы
+        /// </summary>
         ОсновноеМестоРаботы = 0,
+        /// <summary>
+        /// Совместитель
+        /// </summary>
         Совместитель = 1
     }
 }
