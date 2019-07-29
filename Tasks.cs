@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Reflection;
+using System.Threading;
 
 namespace Kesco.Lib.BaseExtention
 {
     /// <summary>
-    /// Предоставляет функции-утилиты для выполнения заданий.
+    ///     Предоставляет функции-утилиты для выполнения заданий.
     /// </summary>
     public static class Tasks
     {
         /// <summary>
-        /// Runs the task.
+        ///     Runs the task.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="calculation">The calculation.</param>
@@ -19,7 +20,7 @@ namespace Kesco.Lib.BaseExtention
             where T : struct
         {
             Exception error = null;
-            T result = default(T);
+            var result = default(T);
 
             IAsyncResult operation = null;
 
@@ -40,7 +41,7 @@ namespace Kesco.Lib.BaseExtention
 
             // Передаём управление другим потокам 
             // и ожидаем результата выполнения операции 
-            System.Threading.Thread.Sleep(0);
+            Thread.Sleep(0);
             if (!operation.AsyncWaitHandle.WaitOne(timeout, true))
                 throw new TimeoutException();
 

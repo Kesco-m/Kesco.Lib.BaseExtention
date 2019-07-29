@@ -3,20 +3,47 @@
 namespace Kesco.Lib.BaseExtention
 {
     /// <summary>
-    /// Класс, реализующий специализированную очередь объектов.
-    /// Используется, например для хранения полей сортировки.
-    /// Позволяет легко менять порядок сортировки
+    ///     Класс, реализующий специализированную очередь объектов.
+    ///     Используется, например для хранения полей сортировки.
+    ///     Позволяет легко менять порядок сортировки
     /// </summary>
     /// <typeparam name="T">Динамический тип данных</typeparam>
     public class SpecialQueue<T>
     {
         /// <summary>
-        /// Список объектов
+        ///     Список объектов
         /// </summary>
         public LinkedList<T> QE = new LinkedList<T>();
 
         /// <summary>
-        /// Добавление объекта в конец очередь
+        ///     Количество объектов в очереди
+        /// </summary>
+        public int Count => QE.Count;
+
+        /// <summary>
+        ///     Получение списка объектов через ',' в порядке от конца к началу очереди
+        /// </summary>
+        public string ReverseListValues
+        {
+            get
+            {
+                if (QE.Count == 0) return "";
+
+                LinkedListNode<T> node;
+                var s = "";
+
+                for (node = QE.Last; node != null; node = node.Previous)
+                {
+                    s += node.Value;
+                    if (!node.Equals(QE.First)) s += ", ";
+                }
+
+                return s;
+            }
+        }
+
+        /// <summary>
+        ///     Добавление объекта в конец очередь
         /// </summary>
         /// <param name="t">Объект, который необходимо добавить в очередь</param>
         public void Enqueue(T t)
@@ -25,7 +52,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        /// Удаление первого объекта из очереди
+        ///     Удаление первого объекта из очереди
         /// </summary>
         /// <returns>Результат операции</returns>
         public T Dequeue()
@@ -36,7 +63,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        /// Получение последнего элемента в очереди
+        ///     Получение последнего элемента в очереди
         /// </summary>
         /// <returns>Значение объекта</returns>
         public T Last()
@@ -45,43 +72,13 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        /// Удаление конкретного объекта из очереди
+        ///     Удаление конкретного объекта из очереди
         /// </summary>
         /// <param name="t">Объект, который необходимо удалить из очередь</param>
         /// <returns>Результат операции</returns>
         public bool Remove(T t)
         {
             return QE.Remove(t);
-        }
-
-        /// <summary>
-        /// Количество объектов в очереди
-        /// </summary>
-        public int Count
-        {
-            get { return QE.Count; }
-        }
-
-        /// <summary>
-        /// Получение списка объектов через ',' в порядке от конца к началу очереди
-        /// </summary>
-        public string ReverseListValues
-        {
-            get
-            {
-                if (QE.Count == 0) return "";
-
-                LinkedListNode<T> node;
-                string s = "";
-
-                for (node = QE.Last; node != null; node = node.Previous)
-                {
-                    s += node.Value;
-                    if (!node.Equals(QE.First)) s += ", ";
-                }
-
-                return s;
-            }
         }
     }
 }

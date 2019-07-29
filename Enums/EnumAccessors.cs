@@ -3,41 +3,44 @@
 namespace Kesco.Lib.BaseExtention.Enums
 {
     /// <summary>
-    /// Полезные функции для работы с enums
+    ///     Полезные функции для работы с enums
     /// </summary>
     public class EnumAccessors
     {
         /// <summary>
-        /// Возвращает название Css-класса в зависимости типа нотификации
+        ///     Возвращает название Css-класса в зависимости типа нотификации
         /// </summary>
         /// <param name="ntf">Тип нотификации</param>
-        /// <param name="isNtf">Размер NTF</param>
+        /// <param name="sizeIsNtf">Размер NTF</param>
         /// <returns></returns>
-        public static string GetCssClassByNtfStatus(NtfStatus ntf, bool isNtf = true)
+        public static string GetCssClassByNtfStatus(NtfStatus ntf, bool sizeIsNtf)
         {
             string className;
 
             switch (ntf)
             {
                 case NtfStatus.Error:
-                    className = !isNtf ? "v4Error" : "v4NtfError";
+                    className = !sizeIsNtf ? "v4Error" : "v4NtfError";
                     break;
                 case NtfStatus.Information:
-                    className = !isNtf ? "v4Information" : "v4NtfInformation";
+                    className = !sizeIsNtf ? "v4Information" : "v4NtfInformation";
                     break;
                 case NtfStatus.Recommended:
-                    className = !isNtf ? "v4Recommended" : "v4NtfRecommended";
+                    className = !sizeIsNtf ? "v4Recommended" : "v4NtfRecommended";
+                    break;
+                case NtfStatus.Empty:
+                    className = !sizeIsNtf ? "v4Empty" : "v4NtfEmpty";
                     break;
                 default:
                     className = "";
                     break;
             }
-            
+
             return className;
         }
 
         /// <summary>
-        /// Возвращает цвет текста в зависимости типа нотификации
+        ///     Возвращает цвет текста в зависимости типа нотификации
         /// </summary>
         /// <param name="ntf">Тип нотификации</param>
         /// <returns></returns>

@@ -4,16 +4,16 @@ using System.Collections.Generic;
 namespace Kesco.Lib.BaseExtention
 {
     /// <summary>
-    ///  расширяющие методы для различных коллекций
+    ///     расширяющие методы для различных коллекций
     /// </summary>
     /// <remarks>
-    ///  Класс в котором хранится все расширяющие методы для коллекций,
-    ///  чтобы было все в одном месте
+    ///     Класс в котором хранится все расширяющие методы для коллекций,
+    ///     чтобы было все в одном месте
     /// </remarks>
     public static class CollectionExtension
     {
         /// <summary>
-        ///  Добавляет в коллекцию Set
+        ///     Добавляет в коллекцию Set
         /// </summary>
         public static void AddCollection<T>(this ISet<T> s, IEnumerable<T> c)
         {
@@ -23,9 +23,10 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Клонирует коллекцию, создает новую коллекцию(с новой ссылкой)
-        ///  с копированными значениями(ссылка новая, значения старые), все значения должны иметь типизированный интерфейс ICloneable.
-        ///  Корректно обрабатывает null параметры
+        ///     Клонирует коллекцию, создает новую коллекцию(с новой ссылкой)
+        ///     с копированными значениями(ссылка новая, значения старые), все значения должны иметь типизированный интерфейс
+        ///     ICloneable.
+        ///     Корректно обрабатывает null параметры
         /// </summary>
         public static void CloneList<T>(this List<T> l, List<T> c)
         {
@@ -39,7 +40,8 @@ namespace Kesco.Lib.BaseExtention
                     if (cl != null)
                         l.Add(cl.Clone());
                     else // сообщение программисту, чтобы явно указать ошибку
-                        throw new Exception("Для использования CloneList необходимо чтобы класс поддерживал интерфейс ICloneable<T>");
+                        throw new Exception(
+                            "Для использования CloneList необходимо чтобы класс поддерживал интерфейс ICloneable<T>");
                 }
             }
         }

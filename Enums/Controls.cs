@@ -1,494 +1,578 @@
 ﻿namespace Kesco.Lib.BaseExtention.Enums.Controls
 {
     /// <summary>
-    /// Переченинь иконок для стандартных кнопок
+    ///     Переченинь иконок для стандартных кнопок
     /// </summary>
     public sealed class ButtonIconsEnum
     {
         /// <summary>
-        /// Иконка для кнопки Добавить
+        ///     Иконка для кнопки Добавить
         /// </summary>
         public const string Add = "v4_buttonIcons.Add";
 
         /// <summary>
-        /// Иконка для кнопки Добавить
+        ///     Иконка для кнопки Добавить
         /// </summary>
         public const string Edit = "v4_buttonIcons.Edit";
 
         /// <summary>
-        /// Иконка для кнопки ОК
+        ///     Иконка для кнопки ОК
         /// </summary>
         public const string Ok = "v4_buttonIcons.Ok";
+
         /// <summary>
-        /// Иконка для кнопки Сохранить
+        ///     Иконка для кнопки Сохранить
         /// </summary>
         public const string Save = "v4_buttonIcons.Save";
+
         /// <summary>
-        /// Иконка для кнопки Отмена
+        ///     Иконка для кнопки Отмена
         /// </summary>
         public const string Cancel = "v4_buttonIcons.Cancel";
+
         /// <summary>
-        /// Иконка для кнопки Обновить
+        ///     Иконка для кнопки Обновить
         /// </summary>
         public const string Refresh = "v4_buttonIcons.Refresh";
+
         /// <summary>
-        /// Иконка для кнопки Закрыть
+        ///     Иконка для кнопки Перепроверить
+        /// </summary>
+        public const string Check = "v4_buttonIcons.Check";
+
+        /// <summary>
+        ///     Иконка для кнопки Закрыть
         /// </summary>
         public const string Close = "v4_buttonIcons.Close";
+
         /// <summary>
-        /// Иконка для кнопки Копировать
+        ///     Иконка для кнопки Копировать
         /// </summary>
         public const string Copy = "v4_buttonIcons.Copy";
+
         /// <summary>
-        /// Иконка для кнопки Удалить
+        ///     Иконка для кнопки Удалить
         /// </summary>
         public const string Delete = "v4_buttonIcons.Delete";
 
         /// <summary>
-        /// Иконка для кнопки Справка
+        ///     Иконка для кнопки Справка
         /// </summary>
         public const string Help = "v4_buttonIcons.Help";
 
         /// <summary>
-        /// Иконка для кнопки Alert
+        ///     Иконка для кнопки Alert
         /// </summary>
         public const string Alert = "v4_buttonIcons.Alert";
 
         /// <summary>
-        /// Иконка для кнопки Alert
+        ///     Иконка для кнопки Alert
         /// </summary>
         public const string FolderOpen = "v4_buttonIcons.FolderOpen";
 
         /// <summary>
-        /// Иконка для кнопки Alert
+        ///     Иконка для кнопки Alert
         /// </summary>
         public const string Print = "v4_buttonIcons.Print";
 
         /// <summary>
-        /// Иконка для кнопки Search
+        ///     Иконка для кнопки Search
         /// </summary>
         public const string Search = "v4_buttonIcons.Search";
 
         /// <summary>
-        /// Иконка для кнопки Swap
+        ///     Иконка для кнопки Swap
         /// </summary>
         public const string Swap = "v4_buttonIcons.Swap";
 
+        /// <summary>
+        ///     Иконка для кнопки Settings
+        /// </summary>
+        public const string Settings = "v4_buttonIcons.Settings";
+
+        /// <summary>
+        ///     Иконка для кнопки Person
+        /// </summary>
+        public const string Person = "v4_buttonIcons.Person";
+
+        /// <summary>
+        ///     Иконка для кнопки Wrench
+        /// </summary>
+        public const string Wrench = "v4_buttonIcons.Wrench";
+
+        /// <summary>
+        ///     Иконка для кнопки Сортировка по возрастанию
+        /// </summary>
+        public const string SortAsc = "v4_buttonIcons.SortAsc";
+
+        /// <summary>
+        ///     Иконка для кнопки Сортировка по убыванию
+        /// </summary>
+        public const string SortDesc = "v4_buttonIcons.SortDesc";
     }
 
     /// <summary>
-    /// Как искать переданные значения
+    ///     Как искать переданные значения
     /// </summary>
     public enum SearchIds
     {
         /// <summary>
-        /// включая
+        ///     включая
         /// </summary>
         In = 0,
+
         /// <summary>
-        /// не включая
+        ///     не включая
         /// </summary>
-        NotIn = 1   
+        NotIn = 1
     }
+
     /// <summary>
-    /// Статус пользовательского сообщения
+    ///     Статус пользовательского сообщения
     /// </summary>
     public enum MessageStatus
     {
         /// <summary>
-        /// Информация
+        ///     Информация
         /// </summary>
         Information = 1,
+
         /// <summary>
-        /// Предупреждение
+        ///     Предупреждение
         /// </summary>
         Warning = 2,
+
         /// <summary>
-        ///Ошибка
+        ///     Ошибка
         /// </summary>
         Error = 3,
+
         /// <summary>
-        /// Внимание
+        ///     Внимание
         /// </summary>
         Attention = 4,
+
         /// <summary>
-        /// Подтверждение
+        ///     Подтверждение
         /// </summary>
         Confirmation = 5
-
     }
 
     /// <summary>
-    /// Перечислитель статусов нотификации
+    ///     Перечислитель статусов нотификации
     /// </summary>
     public enum NtfStatus
     {
         /// <summary>
-        /// Пустое
+        ///     Пустое
         /// </summary>
         Empty = 0,
+
         /// <summary>
-        /// Информационное
+        ///     Информационное
         /// </summary>
         Information = 1,
+
         /// <summary>
-        /// Рекоммендационное
+        ///     Рекоммендационное
         /// </summary>
         Recommended = 2,
+
         /// <summary>
-        /// Ошибка
+        ///     Ошибка
         /// </summary>
         Error = 3
     }
 
     /// <summary>
-    /// Перечислитель направления чтения/записи
+    ///     Перечислитель направления чтения/записи
     /// </summary>
     public enum BindingDirection
     {
         /// <summary>
-        /// запись
+        ///     запись
         /// </summary>
         ToSource = 0,
+
         /// <summary>
-        /// чтение
+        ///     чтение
         /// </summary>
         FromSource = 1
     }
 
     /// <summary>
-    /// Тип значения, чьи контакты отображаются в контроле
+    ///     Тип значения, чьи контакты отображаются в контроле
     /// </summary>
     public enum CallerTypeEnum
     {
         /// <summary>
-        /// Не указан
+        ///     Не указан
         /// </summary>
         Empty = 0,
 
         /// <summary>
-        /// Непосредственный звонок
+        ///     Непосредственный звонок
         /// </summary>
         Contact = 1,
 
         /// <summary>
-        /// В приложение контакты будет передан КодСотрудника
+        ///     В приложение контакты будет передан КодСотрудника
         /// </summary>
         Employee = 2,
 
         /// <summary>
-        /// В приложение контакты будет передан КодЛица
+        ///     В приложение контакты будет передан КодЛица
         /// </summary>
         Person = 3
     }
 
     /// <summary>
-    /// Перечисление условий для даты
+    ///     Перечисление условий для даты
     /// </summary>
     public enum DatePickerEnum
     {
         /// <summary>
-        /// Точно совпадает
+        ///     Точно совпадает
         /// </summary>
         Equal = 0,
+
         /// <summary>
-        /// Меньше или равна
+        ///     Меньше или равна
         /// </summary>
         LessOrEqual = 1,
+
         /// <summary>
-        /// Больше или равна
+        ///     Больше или равна
         /// </summary>
         MoreOrEqual = 2,
+
         /// <summary>
-        /// Находится в интервале
+        ///     Находится в интервале
         /// </summary>
         Interval = 3,
+
         /// <summary>
-        /// Любое значение
+        ///     Любое значение
         /// </summary>
         Any = 4,
+
         /// <summary>
-        /// Не указана
+        ///     Не указана
         /// </summary>
         Null = 5
     }
 
     /// <summary>
-    /// Перечисление типов действий для меню
+    ///     Перечисление типов действий для меню
     /// </summary>
     public enum MenuButtonActionType
     {
         /// <summary>
-        /// ссылка
+        ///     ссылка
         /// </summary>
         UrlAction = 0,
+
         /// <summary>
-        /// действие
+        ///     действие
         /// </summary>
         CmdAction = 1,
+
         /// <summary>
-        /// javaScript
+        ///     javaScript
         /// </summary>
         JSAction = 2,
+
         /// <summary>
-        /// нет действий
+        ///     нет действий
         /// </summary>
         None = 3
     }
 
     /// <summary>
-    /// Перечисление условий для числового поля
+    ///     Перечисление условий для числового поля
     /// </summary>
     public enum NumbersEnum
     {
         /// <summary>
-        /// Равно
+        ///     Равно
         /// </summary>
         Equally = 0,
+
         /// <summary>
-        /// Больше
+        ///     Больше
         /// </summary>
         More = 1,
+
         /// <summary>
-        /// Меньше
+        ///     Меньше
         /// </summary>
         Less = 2,
+
         /// <summary>
-        /// Больше или равно
+        ///     Больше или равно
         /// </summary>
         MoreOrEqual = 3,
+
         /// <summary>
-        /// Меньше или равно
+        ///     Меньше или равно
         /// </summary>
         LessOrEqual = 4,
+
         /// <summary>
-        /// Не равно
+        ///     Не равно
         /// </summary>
         NotEqual = 5,
+
         /// <summary>
-        /// Интервал
+        ///     Интервал
         /// </summary>
         Interval = 6,
+
         /// <summary>
-        /// Любое значение
+        ///     Любое значение
         /// </summary>
         Any = 7,
+
         /// <summary>
-        /// Значение не указано
+        ///     Значение не указано
         /// </summary>
         NoValue = 8
     }
 
     /// <summary>
-    /// Перечисление периодов
+    ///     Перечисление периодов
     /// </summary>
     public enum PeriodsEnum
     {
         /// <summary>
-        /// Неопределено
+        ///     Неопределено
         /// </summary>
         Undefined = 0,
+
         /// <summary>
-        /// День
+        ///     День
         /// </summary>
         Day = 1,
+
         /// <summary>
-        /// Неделя
+        ///     Неделя
         /// </summary>
         Week = 2,
+
         /// <summary>
-        /// Месяц
+        ///     Месяц
         /// </summary>
         Mounth = 3,
+
         /// <summary>
-        /// Квартал
+        ///     Квартал
         /// </summary>
         Quarter = 4,
+
         /// <summary>
-        /// Год
+        ///     Год
         /// </summary>
         Year = 5,
+
         /// <summary>
-        /// Произвольно
+        ///     Произвольно
         /// </summary>
         Custom = 6
     }
 
     /// <summary>
-    /// Перечисление условий для Select
+    ///     Перечисление условий для Select
     /// </summary>
     public enum SelectEnum
     {
         /// <summary>
-        /// Элементы из списка
+        ///     Элементы из списка
         /// </summary>
         Contain = 0,
 
         /// <summary>
-        /// Элементы за исключением
+        ///     Элементы за исключением
         /// </summary>
         NotContain = 1,
 
         /// <summary>
-        /// Любое значение
+        ///     Любое значение
         /// </summary>
         Any = 2,
 
         /// <summary>
-        /// Значение не указано
+        ///     Значение не указано
         /// </summary>
         NoValue = 3
     }
 
 
     /// <summary>
-    /// Перечисление типов текстового поля
+    ///     Перечисление типов текстового поля
     /// </summary>
     public enum TextBoxType
     {
         /// <summary>
-        /// Текст
+        ///     Текст
         /// </summary>
         Text = 1,
+
         /// <summary>
-        /// Пароль
+        ///     Пароль
         /// </summary>
         Password = 2,
+
         /// <summary>
-        /// Электронная почта
+        ///     Электронная почта
         /// </summary>
         Email = 3,
+
         /// <summary>
-        /// Телефон
+        ///     Телефон
         /// </summary>
         Phone = 4
-    };
+    }
 
     /// <summary>
-    /// Перечисление условий для текстового поля
+    ///     Перечисление условий для текстового поля
     /// </summary>
     public enum TextBoxEnum
     {
         /// <summary>
-        /// Содержит все слова
+        ///     Содержит все слова
         /// </summary>
         ContainsAll = 0,
+
         /// <summary>
-        /// Не содержит какого-либо слова
+        ///     Не содержит какого-либо слова
         /// </summary>
         NotContainsAny = 1,
+
         /// <summary>
-        /// Содержит все слова в заданном порядке
+        ///     Содержит все слова в заданном порядке
         /// </summary>
         ContainsAllOrdered = 2,
+
         /// <summary>
-        /// Не содержит слов в заданном порядке
+        ///     Не содержит слов в заданном порядке
         /// </summary>
         NotContainsAllOrdered = 3,
+
         /// <summary>
-        ///  Содержит какое-либо слово
+        ///     Содержит какое-либо слово
         /// </summary>
         ContainsAny = 4,
+
         /// <summary>
-        /// Не содержит ни одного слова
+        ///     Не содержит ни одного слова
         /// </summary>
         NotContainsAll = 5,
+
         /// <summary>
-        /// Слова начинаются
+        ///     Слова начинаются
         /// </summary>
         Starts = 6,
+
         /// <summary>
-        /// Слова не начинаются
+        ///     Слова не начинаются
         /// </summary>
         NotStart = 7,
+
         /// <summary>
-        /// Слова заканчиваются
+        ///     Слова заканчиваются
         /// </summary>
         Ends = 8,
+
         /// <summary>
-        /// Слова не заканчиваются
+        ///     Слова не заканчиваются
         /// </summary>
         NotEnds = 9,
+
         /// <summary>
-        /// Полностью совпадает
+        ///     Полностью совпадает
         /// </summary>
         Matches = 10,
+
         /// <summary>
-        /// Полностью не совпадает
+        ///     Полностью не совпадает
         /// </summary>
         NotMatches = 11,
+
         /// <summary>
-        /// Пустая строка
+        ///     Пустая строка
         /// </summary>
         Empty = 12,
+
         /// <summary>
-        /// Не пустая строка
+        ///     Не пустая строка
         /// </summary>
         NotEmpty = 13
     }
 
     /// <summary>
-    ///  Перечисление способ задания даты
+    ///     Перечисление способ задания даты
     /// </summary>
     public enum DateSearchType
     {
         /// <summary>
-        ///  равен перичисленным документам
+        ///     равен перичисленным документам
         /// </summary>
         Equals = 0,
 
         /// <summary>
-        ///  Больше или равно даты
+        ///     Больше или равно даты
         /// </summary>
         MoreThan = 1,
 
         /// <summary>
-        /// Меньше даты
+        ///     Меньше даты
         /// </summary>
         LessThan = 2
     }
 
     /// <summary>
-    /// Стратегия поиска ресурсов
+    ///     Стратегия поиска ресурсов
     /// </summary>
     public enum SearchResources
     {
         /// <summary>
-        /// Стратегия не задана
+        ///     Стратегия не задана
         /// </summary>
         None = 0,
+
         /// <summary>
-        /// Будут искаться ресурсы, характерные только заданным лицам
+        ///     Будут искаться ресурсы, характерные только заданным лицам
         /// </summary>
         SearchResOnlyForSpecifiedPersons = 1,
+
         /// <summary>
-        /// Будут искаться все ресурсы, характерные заданным лицам
+        ///     Будут искаться все ресурсы, характерные заданным лицам
         /// </summary>
         SearchAllResForPersons = 2
     }
 
     /// <summary>
-    /// Типы запросов к таблицам древовидной структуры
+    ///     Типы запросов к таблицам древовидной структуры
     /// </summary>
     public enum TreeQueryType
     {
         /// <summary>
-        /// Тип запроса: все подчиненные элементы включая родителя
+        ///     Тип запроса: все подчиненные элементы включая родителя
         /// </summary>
         AllChildrenWithParent = 1,
 
         /// <summary>
-        /// Тип запроса: все подчиненные элементы исключая родителя
+        ///     Тип запроса: все подчиненные элементы исключая родителя
         /// </summary>
         AllChildrenWithoutParent = 2,
 
         /// <summary>
-        /// Тип запроса: непосредственные подчиненные элементы включая родителя
+        ///     Тип запроса: непосредственные подчиненные элементы включая родителя
         /// </summary>
         ChildrenWithParent = 3,
 
         /// <summary>
-        /// Тип запроса: непосредственные подчиненные элементы
+        ///     Тип запроса: непосредственные подчиненные элементы
         /// </summary>
         ChildrenWithoutParent = 4
     }

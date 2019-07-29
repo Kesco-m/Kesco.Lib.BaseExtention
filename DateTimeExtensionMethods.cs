@@ -3,16 +3,32 @@
 namespace Kesco.Lib.BaseExtention
 {
     /// <summary>
-    ///  расширяющие методы для DateTime
+    ///     расширяющие методы для DateTime
     /// </summary>
     /// <remarks>
-    ///  Класс в котором хранится все расширяющие методы для DateTime,
-    ///  чтобы было все в одном месте
+    ///     Класс в котором хранится все расширяющие методы для DateTime,
+    ///     чтобы было все в одном месте
     /// </remarks>
     public static class DateTimeExtensionMethods
     {
         /// <summary>
-        /// Between как в SQL
+        ///     Мнимальное значение даты 01-01-1900
+        /// </summary>
+        /// <remarks>
+        ///     Это минимальное значение для smalldatetime
+        /// </remarks>
+        public static readonly DateTime MinDateTime = new DateTime(1900, 1, 1);
+
+        /// <summary>
+        ///     Дата завершения - значение даты 06-06-2079
+        /// </summary>
+        /// <remarks>
+        ///     Это максимальное значение для smalldatetime
+        /// </remarks>
+        public static readonly DateTime EndDateTime = new DateTime(2079, 6, 6);
+
+        /// <summary>
+        ///     Between как в SQL
         /// </summary>
         public static bool Between(this DateTime input, DateTime minDate, DateTime maxDate)
         {
@@ -20,7 +36,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        /// Преобразование к дате SQL
+        ///     Преобразование к дате SQL
         /// </summary>
         public static string ToSqlDate(this DateTime value)
         {
@@ -28,7 +44,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        /// Преобразование к дате SQL
+        ///     Преобразование к дате SQL
         /// </summary>
         public static string ToSqlDate(this DateTime? value)
         {
@@ -39,7 +55,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        /// Преобразование к дате и времени SQL
+        ///     Преобразование к дате и времени SQL
         /// </summary>
         public static string ToSqlDateTime(this DateTime value)
         {
@@ -47,7 +63,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение календарного дня: 1 => 01 
+        ///     Получение календарного дня: 1 => 01
         /// </summary>
         public static string GetCalendarDay(this DateTime value)
         {
@@ -58,7 +74,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение календарного месяца: 1 => 01 
+        ///     Получение календарного месяца: 1 => 01
         /// </summary>
         public static string GetCalendarMonth(this DateTime value)
         {
@@ -69,7 +85,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение календарного года: 1 => 0001 
+        ///     Получение календарного года: 1 => 0001
         /// </summary>
         public static string GetCalendarYear(this DateTime value)
         {
@@ -84,7 +100,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение часа в строковом формате: 1 => 01 
+        ///     Получение часа в строковом формате: 1 => 01
         /// </summary>
         public static string GetHourString(this DateTime value)
         {
@@ -95,7 +111,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение часа в строковом формате: 1 => 01 
+        ///     Получение часа в строковом формате: 1 => 01
         /// </summary>
         public static string GetMinuteString(this DateTime value)
         {
@@ -106,7 +122,7 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение даты в формате dd.MM.yyyy не зависимо от культуры
+        ///     Получение даты в формате dd.MM.yyyy не зависимо от культуры
         /// </summary>
         public static string GetIndependenceDate(this DateTime value)
         {
@@ -114,38 +130,32 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
-        ///  Получение даты и времени в формате dd.MM.yyyy HH:mm не зависимо от культуры
+        ///     Получение даты и времени в формате dd.MM.yyyy HH:mm не зависимо от культуры
         /// </summary>
         public static string GetIndependenceDateTime(this DateTime value)
         {
-            return value.GetIndependenceDate() + " " + value.GetHourString() + ":" + value.GetMinuteString(); 
+            return value.GetIndependenceDate() + " " + value.GetHourString() + ":" + value.GetMinuteString();
         }
 
 
         /// <summary>
-        ///  Возвращает нормализованные граничные значения для SQL
+        ///     Возвращает нормализованные граничные значения для SQL
         /// </summary>
         public static DateTime ToSqlDateNormalized(this DateTime value)
         {
             var minDate = MinDateTime;
 
-            if (value < minDate)
-            {
-                return minDate;
-            }
+            if (value < minDate) return minDate;
 
             var maxDate = EndDateTime;
 
-            if (value > maxDate)
-            {
-                return maxDate;
-            }
+            if (value > maxDate) return maxDate;
 
             return value;
         }
 
         /// <summary>
-        ///  Возвращает нормализованные граничные значения для SQL
+        ///     Возвращает нормализованные граничные значения для SQL
         /// </summary>
         public static DateTime? ToSqlDateNormalized(this DateTime? value)
         {
@@ -154,35 +164,13 @@ namespace Kesco.Lib.BaseExtention
 
             var minDate = MinDateTime;
 
-            if (value < minDate)
-            {
-                return minDate;
-            }
+            if (value < minDate) return minDate;
 
             var maxDate = EndDateTime;
 
-            if (value > maxDate)
-            {
-                return maxDate;
-            }
+            if (value > maxDate) return maxDate;
 
             return value;
         }
-
-        /// <summary>
-        ///  Мнимальное значение даты 01-01-1900
-        /// </summary>
-        /// <remarks>
-        ///  Это минимальное значение для smalldatetime
-        /// </remarks>
-        public static readonly DateTime MinDateTime = new DateTime(1900, 1, 1);
-
-        /// <summary>
-        ///  Дата завершения - значение даты 06-06-2079
-        /// </summary>
-        /// <remarks>
-        ///  Это максимальное значение для smalldatetime
-        /// </remarks>
-        public static readonly DateTime EndDateTime = new DateTime(2079, 6, 6);
-     }
+    }
 }

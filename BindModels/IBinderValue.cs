@@ -1,22 +1,22 @@
 ﻿namespace Kesco.Lib.BaseExtention.BindModels
 {
     /// <summary>
-    ///  Интерфейс связывателя(Binder)
+    ///     Интерфейс связывателя(Binder)
     /// </summary>
     public interface IBinderValue<T>
     {
         /// <summary>
-        ///  Значение
+        ///     Значение
         /// </summary>
         T Value { get; set; }
 
         /// <summary>
-        ///  Событие изменения значения
+        ///     Событие изменения значения
         /// </summary>
         event ValueChangedEventHandler ValueChangedEvent;
 
         /// <summary>
-        ///  Выполяняет действия события ValueChangedEvent
+        ///     Выполяняет действия события ValueChangedEvent
         /// </summary>
         void ValueChangedEvent_Invoke(string newVal, string oldVal);
     }

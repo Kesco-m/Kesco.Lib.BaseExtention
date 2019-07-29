@@ -21,12 +21,12 @@ namespace Kesco.Lib.BaseExtention
             var id = Guid.NewGuid();
             return
                 string.Format(
-                    "$('body').append('<a id=\"{0}\"></a>'); $(\"#{0}\").attr(\"href\", {1}); v4_evalHref('{0}'); $('#{0}').remove();",
+                    "$('body').append('<a id=\"{0}\"></a>'); $(\"#{0}\").attr(\"href\", {1}); v4_stopAsyncEvent = true; $('body').append('<div id=\"v4_divReloadWait\" style=\"position:absolute;top:0;left:0;height:100%;width:100%;z-index:99999\"></div>'); $(\"#v4_divReloadWait\").css({{'cursor' : 'wait'}}); v4_evalHref('{0}'); $('#{0}').remove();",
                     id, hrefIsVar ? href : "\"" + href + "\"");
         }
 
         /// <summary>
-        /// Построитель строки uri
+        ///     Построитель строки uri
         /// </summary>
         /// <param name="uri">Путь к форме</param>
         /// <param name="qparams">Коллекция параметров</param>
@@ -34,10 +34,9 @@ namespace Kesco.Lib.BaseExtention
         public static string UriBuilder(string uri, NameValueCollection qparams)
         {
             var sb = new StringBuilder();
-            
+
             foreach (string key in qparams)
                 sb.AppendFormat("{0}={1}{2}", key, HttpUtility.UrlDecode(qparams[key]), "&");
-            
 
 
             if (qparams.Count > 0)
@@ -45,7 +44,7 @@ namespace Kesco.Lib.BaseExtention
                 if (uri.Contains("?")) uri += "&";
                 else uri += "?";
             }
-            
+
             uri += sb.ToString().TrimEnd('&');
 
             return uri;

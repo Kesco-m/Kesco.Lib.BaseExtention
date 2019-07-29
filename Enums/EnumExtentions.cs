@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Kesco.Lib.BaseExtention.Enums
 {
     /// <summary>
-    /// Класс определения дополнительных аттрибутов enums
+    ///     Класс определения дополнительных аттрибутов enums
     /// </summary>
     public static class EnumExtensions
     {
         /// <summary>
-        /// Получение аттрибутов enum
+        ///     Получение аттрибутов enum
         /// </summary>
         /// <typeparam name="TAttribute">Аттрибут</typeparam>
         /// <param name="value">Значение enum</param>
@@ -21,7 +19,7 @@ namespace Kesco.Lib.BaseExtention.Enums
         {
             var type = value.GetType();
             var name = Enum.GetName(type, value);
-            return type.GetField(name) 
+            return type.GetField(name)
                 .GetCustomAttributes(false)
                 .OfType<TAttribute>()
                 .SingleOrDefault();

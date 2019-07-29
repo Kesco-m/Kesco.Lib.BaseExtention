@@ -3,7 +3,7 @@
 namespace Kesco.Lib.BaseExtention.BindModels
 {
     /// <summary>
-    ///  Класс хронящий в себе одно string значение, с возможностью уведомлений об изменении
+    ///     Класс хронящий в себе одно string значение, с возможностью уведомлений об изменении
     /// </summary>
     /// <remarks>Основное предназначение - двухстронний binding при помощи классов V4Binding</remarks>
     /// <example>Пример использования есть в DocPage для Number и Description</example>
@@ -13,7 +13,7 @@ namespace Kesco.Lib.BaseExtention.BindModels
         private string _value;
 
         /// <summary>
-        ///  Значение
+        ///     Значение
         /// </summary>
         public string Value
         {
@@ -26,15 +26,7 @@ namespace Kesco.Lib.BaseExtention.BindModels
         }
 
         /// <summary>
-        ///  Добавить значение без генерации события об изменении
-        /// </summary>
-        public void SetValueWithoutEvent(string value)
-        {
-            _value = value;
-        }
-
-        /// <summary>
-        ///  Выполяняет действия события ValueChangedEvent
+        ///     Выполяняет действия события ValueChangedEvent
         /// </summary>
         public void ValueChangedEvent_Invoke(string newVal, string oldVal)
         {
@@ -45,8 +37,16 @@ namespace Kesco.Lib.BaseExtention.BindModels
         }
 
         /// <summary>
-        ///  Событие изменения значения
+        ///     Событие изменения значения
         /// </summary>
         public event ValueChangedEventHandler ValueChangedEvent;
+
+        /// <summary>
+        ///     Добавить значение без генерации события об изменении
+        /// </summary>
+        public void SetValueWithoutEvent(string value)
+        {
+            _value = value;
+        }
     }
 }

@@ -19,7 +19,6 @@ namespace Kesco.Lib.BaseExtention
             using (var gc = new DirectoryEntry("GC:"))
             {
                 foreach (DirectoryEntry z in gc.Children)
-                {
                     using (var root = z)
                     {
                         using (
@@ -32,7 +31,6 @@ namespace Kesco.Lib.BaseExtention
                             return result;
                         }
                     }
-                }
             }
 
             return null;
