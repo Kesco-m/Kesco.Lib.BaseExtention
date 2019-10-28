@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace Kesco.Lib.BaseExtention
 {
@@ -43,6 +46,71 @@ namespace Kesco.Lib.BaseExtention
                         throw new Exception(
                             "Для использования CloneList необходимо чтобы класс поддерживал интерфейс ICloneable<T>");
                 }
+            }
+        }
+
+        /// <summary>
+        /// Удаление элемента из BlockingCollection
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="self"></param>
+        /// <param name="itemToRemove"></param>
+        /// <returns></returns>
+        public static bool Remove<T>(this BlockingCollection<T> self, T itemToRemove)
+        {
+            lock (self)
+            {
+                T comparedItem;
+                var itemsList = new List<T>();
+                do
+                {
+                    var result = self.TryTake(out comparedItem);
+                    if (!result)
+                        return false;
+                    if (!comparedItem.Equals(itemToRemove))
+                    {
+                        itemsList.Add(comparedItem);
+                    }
+                } while (!(comparedItem.Equals(itemToRemove)));
+                Parallel.ForEach(itemsList, t => self.Add(t));
+            }
+            return true;
+        }
+
+
+        /// <summary>
+        /// Удаление элемента из ConcurrentDictionary
+        /// </summary>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="self"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static bool TryRemove<TKey, TValue>(
+            this ConcurrentDictionary<TKey, TValue> self, TKey key)
+        {
+            TValue ignored;
+            return self.TryRemove(key, out ignored);
+        }
+
+        /// <summary>
+        /// Найти в перечне элемент, удовлетворяющий услувию
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool TryFirstOrDefault<T>(this IEnumerable<T> source, out T value)
+        {
+            value = default(T);
+            using (var iterator = source.GetEnumerator())
+            {
+                if (iterator.MoveNext())
+                {
+                    value = iterator.Current;
+                    return true;
+                }
+                return false;
             }
         }
     }
