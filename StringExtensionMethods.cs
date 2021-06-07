@@ -89,6 +89,23 @@ namespace Kesco.Lib.BaseExtention
         }
 
         /// <summary>
+        ///     переводит проверка в Проверка
+        /// </summary>
+        public static string FirstWordCharToUpper(this string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                switch (value)
+                {
+                    case null: throw new ArgumentNullException(nameof(value));
+                    case "": throw new ArgumentException($"{nameof(value)} cannot be empty", nameof(value));
+                    default: return value.First().ToString().ToUpper() + value.Substring(1);
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
         ///     Проверяет явлется строка целым числом
         /// </summary>
         /// <remarks>
@@ -482,6 +499,23 @@ namespace Kesco.Lib.BaseExtention
 
             return par.Any(p => p == value);
         }
+
+
+        /// <summary>
+        /// Подобен оператору LIKE в MS SQL
+        /// </summary>
+        /// <param name="toSearch">Где ищем</param>
+        /// <param name="toFind">Что ищем</param>
+        /// <param name="replaceStar">Надо ли заменять * на % </param>
+        /// <returns></returns>
+        public static bool Like(this string toSearch, string toFind, bool replaceStar = false)
+        {
+            if (!string.IsNullOrEmpty(toFind) && replaceStar)
+                toFind = toFind.Replace('*', '%');
+
+            return new Regex(@"\A" + new Regex(@"\.|\$|\^|\{|\[|\(|\||\)|\*|\+|\?|\\").Replace(toFind, ch => @"\" + ch).Replace('_', '.').Replace("%", ".*") + @"\z", RegexOptions.Singleline).IsMatch(toSearch);
+        }
+        
 
         /// <summary>
         ///     Преобразование строки к nullable int

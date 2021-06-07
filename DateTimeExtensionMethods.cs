@@ -40,7 +40,7 @@ namespace Kesco.Lib.BaseExtention
         /// </summary>
         public static string ToSqlDate(this DateTime value)
         {
-            return value.ToString("yyyy-MM-dd");
+            return value.ToString("yyyyMMdd");
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Kesco.Lib.BaseExtention
             if (value == null)
                 return null;
 
-            return value.Value.ToString("yyyy-MM-dd");
+            return value.Value.ToString("yyyyMMdd");
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Kesco.Lib.BaseExtention
         /// </summary>
         public static string ToSqlDateTime(this DateTime value)
         {
-            return value.ToString("yyyy-MM-dd HH:mm:ss");
+            return value.ToString("yyyyMMdd HH:mm:ss");
         }
 
         /// <summary>

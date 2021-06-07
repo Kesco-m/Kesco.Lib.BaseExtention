@@ -1,5 +1,30 @@
-﻿namespace Kesco.Lib.BaseExtention.Enums.Docs
+﻿using System;
+
+namespace Kesco.Lib.BaseExtention.Enums.Docs
 {
+
+    /// <summary>
+    ///    Требования по указанию ИТ
+    /// </summary>
+    public enum DirectionsDemand
+    {
+
+        /// <summary>
+        ///     Требуется оборудование
+        /// </summary>
+        RequiredEquipment,
+
+        /// <summary>
+        ///     Требуется учетная запись
+        /// </summary>
+        RequiredEthernet,
+
+        /// <summary>
+        ///     Требуется доступ к данным
+        /// </summary>
+        RequiredAccessData
+    }
+
     /// <summary>
     ///     Поведение класса BaseDocFacade при установке set значения
     /// </summary>
@@ -1376,27 +1401,47 @@
     /// <summary>
     ///     Варианты организации работы
     /// </summary>
-    public enum DirectionsWorkPlaceTypeBitEnum
+    
+    public enum DirectionsTypeBitEnum
     {
         /// <summary>
         ///     Организовать сотруднику рабочее место в офисе
         /// </summary>
+        [Specifications.DirectionsType("DIRECTIONS_Radio_WpType_1", "Указание на организацию работы на рабочем месте в офисе", "DIRECTIONS_DocTitle_WpType_1")]
         РабочееМестоВОфисе = 1,
-
-        /// <summary>
-        ///     Организовать сотруднику рабочее место вне офиса
-        /// </summary>
-        РабочееМестоВнеОфиса = 2,
-
-        /// <summary>
-        ///     Организовать сотруднику доступ к корпоративной сети через Internet
-        /// </summary>
-        УчетнаяЗаписьБезРабочегоМеста = 4,
 
         /// <summary>
         ///     Организовать сотруднику переезд на другое рабочее место
         /// </summary>
-        ПереездНаДругоеРабочееМесто = 8
+        [Specifications.DirectionsType("DIRECTIONS_Radio_WpType_2", "Указание на переезд сотрудника на другое рабочее место", "DIRECTIONS_DocTitle_WpType_2")]
+        ПереездНаДругоеРабочееМесто = 2,
+
+
+        /// <summary>
+        ///     Организовать сотруднику рабочее место вне офиса
+        /// </summary>
+        [Specifications.DirectionsType("DIRECTIONS_Radio_WpType_3", "Указание на организацию работы вне офиса", "DIRECTIONS_DocTitle_WpType_3")]
+        РабочееМестоВнеОфиса = 3,
+
+
+        /// <summary>
+        ///     Организовать сотруднику изменение прав доступа
+        /// </summary>
+        [Specifications.DirectionsType("DIRECTIONS_Radio_WpType_4", "Указание на изменение учетной записи сотрудника при смене обязанностей", "DIRECTIONS_DocTitle_WpType_4")]
+        ИзменениеУчетнойЗаписи = 4,
+
+        /// <summary>
+        ///     Организовать сотруднику группы доступ к корпоративной сети через Internet
+        /// </summary>
+        [Specifications.DirectionsType("DIRECTIONS_Radio_WpType_5", "Указание на создание учетной записи сотруднику группы посменной работы", "DIRECTIONS_DocTitle_WpType_5")]
+        УчетнаяЗаписьСотрудникаГруппы = 5,
+
+
+        /// <summary>
+        ///     Организовать сотруднику доступ к корпоративной сети через Internet
+        /// </summary>
+        [Specifications.DirectionsType("DIRECTIONS_Radio_WpType_6", "Указание на организацию работы на гостевом рабочем месте в офисе", "DIRECTIONS_DocTitle_WpType_6")]
+        УчетнаяЗаписьНаГостевомМесте = 6
     }
 
     #endregion

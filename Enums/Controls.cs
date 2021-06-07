@@ -1,10 +1,42 @@
 ﻿namespace Kesco.Lib.BaseExtention.Enums.Controls
 {
+
+    /// <summary>
+    /// Кто должен получить сообщение
+    /// </summary>
+    public enum SignaRReceiveClientsMessageEnum
+    {
+        /// <summary>
+        /// Получателем является текущая страница
+        /// </summary>
+        Self = 0,
+        
+        /// <summary>
+        ///     c одинаковым  ItemId ItemName
+        /// </summary>
+        ItemId_ItemName = 1,
+
+        /// <summary>
+        ///     c одинаковым ItemName
+        /// </summary>
+        ItemName = 2,
+
+        /// <summary>
+        ///     С указанным IDP
+        /// </summary>
+        PageId = 3
+
+    }
+
     /// <summary>
     ///     Переченинь иконок для стандартных кнопок
     /// </summary>
     public sealed class ButtonIconsEnum
     {
+        /// <summary>
+        ///     Иконка для кнопки Добавить
+        /// </summary>
+        public const string Export1s = "v4_buttonIcons.Export1s";
         /// <summary>
         ///     Иконка для кнопки Добавить
         /// </summary>
@@ -73,6 +105,11 @@
         /// <summary>
         ///     Иконка для кнопки Alert
         /// </summary>
+        public const string Plus = "v4_buttonIcons.Plus";
+
+        /// <summary>
+        ///     Иконка для кнопки Alert
+        /// </summary>
         public const string Print = "v4_buttonIcons.Print";
 
         /// <summary>
@@ -109,6 +146,42 @@
         ///     Иконка для кнопки Сортировка по убыванию
         /// </summary>
         public const string SortDesc = "v4_buttonIcons.SortDesc";
+
+        /// <summary>
+        ///     Иконка для кнопки Сортировка по убыванию
+        /// </summary>
+        public const string document = "v4_buttonIcons.Document";
+
+        /// <summary>
+        ///     Иконка TODO: Марченков
+        /// </summary>
+        public const string VolumeOff = "v4_buttonIcons.VolumeOff";
+
+        /// <summary>
+        ///     Иконка для кнопки Загрузить
+        /// </summary>
+        public const string Download = "v4_buttonIcons.Download";
+
+        /// <summary>
+        ///     Иконка для кнопки Перевыпуск
+        /// </summary>
+        public const string Reload = "v4_buttonIcons.Reload";
+
+        /// <summary>
+        ///     Иконка для кнопки Вернуться к списку
+        /// </summary>
+        public const string BackToList = "v4_buttonIcons.BackToList";
+
+        /// <summary>
+        ///     Иконка для кнопки вставка
+        /// </summary>
+        public const string InDoc = "v4_buttonIcons.InDoc";
+
+        /// <summary>
+        ///     Иконка для кнопки Позвонить
+        /// </summary>
+        public const string Call = "v4_buttonIcons.Call";
+
     }
 
     /// <summary>

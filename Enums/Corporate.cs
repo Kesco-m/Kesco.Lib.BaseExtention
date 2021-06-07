@@ -3,31 +3,41 @@
 namespace Kesco.Lib.BaseExtention.Enums.Corporate
 {
     /// <summary>
-    ///     Аттрибут: иконки в зависимости от типа рабочего места
+    /// Коды сотрудников
     /// </summary>
-    public class ТипыРабочихМестSpecifications : Attribute
+    public enum КодыСотрудников
     {
-        internal ТипыРабочихМестSpecifications(string icon, string iconGrayed, string name)
-        {
-            Icon = icon;
-            IconGrayed = iconGrayed;
-            Name = name;
-        }
 
         /// <summary>
-        ///     Иконка
+        /// Анисимов В.Л.
         /// </summary>
-        public string Icon { get; }
+        Анисимов = 1
+    }
+
+    /// <summary>
+    /// Варианты закрытия дежурства
+    /// </summary>
+    public enum ВариантыЗакрытияДежурства {
+       
+        /// <summary>
+        /// Невозможно определить
+        /// </summary>
+        НевозможноОпределить = 0,
+        /// <summary>
+        /// Дежурил тот кто планировался
+        /// </summary>
+        ЗамечанийКДежурствуНет = 1,
 
         /// <summary>
-        ///     Иконка не готового рабочего места
+        /// Дежурил другой сотрудник
         /// </summary>
-        public string IconGrayed { get; }
+        ДежурилДругойСотрудник = 2,
 
         /// <summary>
-        ///     Название типа рабочего места
+        /// Никто не дежурил
         /// </summary>
-        public string Name { get; }
+        НиктоНеДежурил = 3,
+
     }
 
     /// <summary>
@@ -38,31 +48,31 @@ namespace Kesco.Lib.BaseExtention.Enums.Corporate
         /// <summary>
         ///     Компьютеризированное рабочее место
         /// </summary>
-        [ТипыРабочихМестSpecifications("Notebook.gif", "NotebookGrayed.gif", "ENUM_РабочееМесто_1")]
+        [Specifications.InventoryWorkPlaceType("Notebook.gif", "NotebookGrayed.gif", "ENUM_РабочееМесто_1")]
         КомпьютеризированноеРабочееМесто = 1,
 
         /// <summary>
         ///     Номер гостиницы
         /// </summary>
-        [ТипыРабочихМестSpecifications("bed.gif", "bed.gif", "ENUM_РабочееМесто_2")]
+        [Specifications.InventoryWorkPlaceType("bed.gif", "bed.gif", "ENUM_РабочееМесто_2")]
         НомерГостиницы = 2,
 
         /// <summary>
         ///     Оборудование
         /// </summary>
-        [ТипыРабочихМестSpecifications("service.gif", "service.gif", "ENUM_РабочееМесто_3")]
+        [Specifications.InventoryWorkPlaceType("service.gif", "service.gif", "ENUM_РабочееМесто_3")]
         Оборудование = 3,
 
         /// <summary>
         ///     Cклад оборудования
         /// </summary>
-        [ТипыРабочихМестSpecifications("Store.gif", "Store.gif", "ENUM_РабочееМесто_4")]
+        [Specifications.InventoryWorkPlaceType("Store.gif", "Store.gif", "ENUM_РабочееМесто_4")]
         CкладОборудования = 4,
 
         /// <summary>
         ///     Гостевое рабочее место
         /// </summary>
-        [ТипыРабочихМестSpecifications("chat.png", "chat.png", "ENUM_РабочееМесто_5")]
+        [Specifications.InventoryWorkPlaceType("chat.png", "chat.png", "ENUM_РабочееМесто_5")]
         ГостевоеРабочееМесто = 5
     }
 

@@ -4,9 +4,30 @@
 namespace Kesco.Lib.BaseExtention
 {
     /// <summary>
-    ///     Класс обработки события ValueChange
+    ///     Класс обработки события ObjectChange
     /// </summary>
-    public class ValueChangedEventArgs : EventArgs
+    public class ObjectChangedEventArgs : EventArgs
+    {
+        /// <summary>
+        ///     Новое значение
+        /// </summary>
+        public object NewValue;
+        
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="newValue">Измененный объект</param>
+        public ObjectChangedEventArgs(object newValue)
+        {
+            NewValue = newValue;
+        }
+    }
+
+
+        /// <summary>
+        ///     Класс обработки события ValueChange
+        /// </summary>
+        public class ValueChangedEventArgs : EventArgs
     {
         /// <summary>
         ///     Новое значение

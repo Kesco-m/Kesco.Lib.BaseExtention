@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
@@ -47,6 +48,17 @@ namespace Kesco.Lib.BaseExtention
                             "Для использования CloneList необходимо чтобы класс поддерживал интерфейс ICloneable<T>");
                 }
             }
+        }
+
+        /// <summary>
+        /// Клонирование листа
+        /// </summary>
+        /// <typeparam name="T">Тип объекта</typeparam>
+        /// <param name="listToClone">Что клонируем</param>
+        /// <returns></returns>
+        public static IList<T> Clone<T>(this IList<T> listToClone) where T : ICloneable
+        {
+            return listToClone.Select(item => (T)item.Clone()).ToList();
         }
 
         /// <summary>

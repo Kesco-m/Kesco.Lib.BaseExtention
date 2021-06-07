@@ -58,6 +58,9 @@
     <Compile Include="Enums\Docs.cs" />
     <Compile Include="Enums\EnumAccessors.cs" />
     <Compile Include="Enums\EnumExtentions.cs" />
+    <Compile Include="Enums\Specifications.cs" />
+    <Compile Include="IPAddressRange.cs" />
+    <Compile Include="PropertyCopy.cs" />
     <Compile Include="ObjectDeepCloner.cs" />
     <Compile Include="RegexPattern.cs" />
     <Compile Include="Validation.cs" />

@@ -20,16 +20,16 @@ namespace Kesco.Lib.BaseExtention.Enums
             switch (ntf)
             {
                 case NtfStatus.Error:
-                    className = !sizeIsNtf ? "v4Error" : "v4NtfError";
+                    className = "v4Error";
                     break;
                 case NtfStatus.Information:
-                    className = !sizeIsNtf ? "v4Information" : "v4NtfInformation";
+                    className = "v4Information";
                     break;
                 case NtfStatus.Recommended:
-                    className = !sizeIsNtf ? "v4Recommended" : "v4NtfRecommended";
+                    className = "v4Recommended";
                     break;
                 case NtfStatus.Empty:
-                    className = !sizeIsNtf ? "v4Empty" : "v4NtfEmpty";
+                    className = "v4Empty";
                     break;
                 default:
                     className = "";
